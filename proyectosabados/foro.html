@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Discusión</title>
+    
+    <!-- Enlace al CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Título del Foro -->
+        <h1>Publicar nuevo tema</h1>
+        
+        <!-- Formulario con evento para mostrar mensaje -->
+        <!-- @Valentina: He configurado el formulario para que no recargue la página y ejecute la alerta JS -->
+        <form onsubmit="confirmarPublicacion(event)">
+            
+            <label for="titulo">Título del tema:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ej: ¿Cuál estrategia te ha funcionado?" required>
+
+            <label for="autor">Tu Nombre:</label>
+            <input type="text" id="autor" name="autor" placeholder="Tu nombre..." required>
+
+            <label for="mensaje">Contenido:</label>
+            <textarea id="mensaje" name="mensaje" style="height:100px" placeholder="Escribe tu opinión aquí..." required></textarea>
+
+            <input type="submit" value="Publicar en el Foro">
+        </form>
+
+        
+        <!-- @Yeison: Aquí agregué la sección de historial para que parezca un foro activo -->
+        <div class="comentarios-previos">
+            <h2>Discusiones recientes</h2>
+            
+            <div class="comentario">
+                <div class="usuario">Usuario: Santi_Explorer</div>
+                <p>Hola a todos. Llevo meses sospechando que tengo TDAH. Me cuesta muchísimo empezar tareas simples, es como si tuviera una "pared invisible" en mi cerebro aunque quiera hacerlo. ¿A alguien más le pasa esta parálisis?</p>
+            </div>
+
+            <div class="comentario">
+                <div class="usuario">Usuario: Elena_Focus</div>
+                <p>¡Te entiendo perfectamente, Santi! A mí me diagnosticaron hace un año. Lo que me ayuda es el "Body Doubling" (trabajar con alguien al lado en silencio). Si estoy sola, pongo ruido marrón (Brown Noise) para calmar mi mente. ¡Ánimo!</p>
+            </div>
+        </div>
+            <div class="comentario">
+                <div class="usuario">Usuario: MariaGomez88</div>
+                <p>¡Me encantan los nuevos colores de la página! Se ven muy relajantes me ayuda concentrarme.</p>
+            </div>
+
+            <div class="comentario">
+                <div class="usuario">Usuario: Carlos_Dev</div>
+                <p>Hablando de colores es mejor la luz blanca o calida para estudiar?.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT PARA EL MENSAJE DE CONFIRMACIÓN -->
+    <script>
+        function confirmarPublicacion(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            // Mensaje de alerta solicitado
+            alert("¡Tu publicación ha sido guardada exitosamente en el foro!");
+            
+            // Opcional: Limpiar el formulario después de enviar
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
+</html>
